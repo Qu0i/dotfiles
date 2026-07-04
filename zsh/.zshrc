@@ -1,35 +1,19 @@
 export PATH="$HOME/.local/bin:$PATH"
-source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
-export HERMES_HOME="$HOME/.hermes"
 
 # History
 HISTFILE=~/.zsh_history
 HISTSIZE=10000
 SAVEHIST=10000
 
-# do not store duplicate commands
 setopt HIST_IGNORE_DUPS
-# append commands to history immediately
 setopt INC_APPEND_HISTORY
-# share history between sessions
 setopt SHARE_HISTORY
-# record command execution timestamps
 setopt EXTENDED_HISTORY
 
-venvexp() {
-    export OMP_NUM_THREADS=1
-    export MKL_NUM_THREADS=1
-    export OPENBLAS_NUM_THREADS=1
-    export NUMEXPR_NUM_THREADS=1
-    export LOKY_PICKLER="pickle"
-    export CUDA_VISIBLE_DEVICES=""
-    echo "Environment variables set for venvexp"
-}
-
+# Prompt
 PROMPT='%F{#f0f0f0}%n%f@%F{#4a4a4a}%m%f:%F{#8a8a8a}%~%f $ '
 
+source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
 source ~/.zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
-alias vencord='sh -c "$(curl -sS https://vencord.dev/install.sh)"'
 alias nv='nvim'
-alias yamusic='nohup ~/Downloads/Zen/YandexMusicMod-5.86.0-2.2.0.linux.AppImage'
