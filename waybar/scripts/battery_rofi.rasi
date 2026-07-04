@@ -1,0 +1,39 @@
+/* battery_rofi.rasi - Minimal Purple & Black Accent Battery Notification */
+* {
+    bg0:    rgba ( 25, 12, 38, 95 % );  /* Dark purple/black background */
+    bg1:    rgba ( 43, 16, 68, 100 % ); /* Purple accent */
+    fg:     rgba ( 255, 255, 255, 100 % );
+    accent: rgba ( 199, 125, 255, 100 % ); /* Light purple */
+    brd:    rgba ( 157, 78, 221, 60 % );  /* Purple border */
+    background-color: transparent;
+    text-color: var(fg);
+}
+window {
+    width:            250px;
+    background-color: var(bg0);
+    border:           2;
+    border-color:     var(brd);
+    border-radius:    12px;
+    padding:          16px;
+    location:         center;
+    anchor:           center;
+    x-offset:         0;
+    y-offset:         0;
+}
+mainbox {
+    background-color: transparent;
+    spacing:          0;
+    children:         [ message ];
+}
+message {
+    background-color: transparent;
+    padding:          0;
+    border:           0;
+}
+textbox {
+    text-color:       var(fg);
+    font:             "JetBrainsMono Nerd Font Bold 12";
+    horizontal-align: 0.5;
+    vertical-align:   0.5;
+    markup:           true;
+}

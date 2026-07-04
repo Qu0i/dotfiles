@@ -1,0 +1,6 @@
+source = ~/.config/hypr/envs.conf
+source = ~/.config/hypr/monitors.conf
+source = ~/.config/hypr/windowrules.conf
+source = ~/.config/hypr/keybindings.conf
+
+

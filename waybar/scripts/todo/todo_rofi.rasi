@@ -1,0 +1,86 @@
+/* todo_rofi.rasi - Ultra Compact Purple Theme */
+* {
+    bg0:    rgba ( 25, 12, 38, 95 % );
+    bg1:    rgba ( 43, 16, 68, 100 % );
+    bg2:    rgba ( 76, 25, 112, 100 % );
+    accent: rgba ( 199, 125, 255, 100 % );
+    accent2: rgba ( 123, 44, 177, 100 % );
+    fg:     rgba ( 255, 255, 255, 100 % );
+    fg-dim: rgba ( 136, 136, 136, 100 % );
+    brd:    rgba ( 157, 78, 221, 35 % );
+    background-color: transparent;
+    text-color: var(fg);
+}
+window {
+    width:            280px;
+    background-color: var(bg0);
+    border:           1;
+    border-color:     var(brd);
+    border-radius:    10px;
+    padding:          0;
+    location:         northeast;
+    anchor:           northeast;
+    x-offset:         -12;
+    y-offset:         40;
+}
+mainbox {
+    background-color: transparent;
+    padding:          0;
+    spacing:          0;
+    children:         [ inputbar, message, listview ];
+}
+inputbar {
+    background-color: var(bg1);
+    padding:          6px 10px;
+    spacing:          6px;
+    children:         [ prompt, entry ];
+    border:           0 0 1px 0;
+    border-color:     var(brd);
+}
+prompt {
+    text-color: var(accent);
+    font:       "JetBrainsMono Nerd Font Bold 10";
+}
+entry {
+    text-color:        var(fg);
+    font:              "JetBrainsMono Nerd Font 10";
+    placeholder:       "Filter...";
+    placeholder-color: var(fg-dim);
+}
+message {
+    background-color: rgba ( 30, 15, 45, 90 % );
+    padding:          6px 10px;
+    border:           0 0 1px 0;
+    border-color:     var(brd);
+}
+textbox {
+    text-color:       var(fg);
+    font:             "JetBrainsMono Nerd Font 9";
+}
+listview {
+    background-color: transparent;
+    padding:          2px;
+    spacing:          1px;
+    lines:            8;
+    scrollbar:        false;
+    border:           0;
+    fixed-height:     false;
+}
+element {
+    background-color: transparent;
+    padding:          4px 8px;
+    border-radius:    4px;
+    spacing:          0;
+    border:           0;
+    cursor:           pointer;
+}
+element.normal.normal    { background-color: transparent; text-color: var(fg); }
+element.selected.normal  { background-color: var(bg2); text-color: var(accent); }
+element.alternate.normal { background-color: transparent; text-color: var(fg); }
+element-text {
+    background-color: transparent;
+    text-color:       inherit;
+    font:             "JetBrainsMono Nerd Font 10";
+    highlight:        bold;
+    vertical-align:   0.5;
+}
