@@ -9,9 +9,13 @@ echo "[*] Installing dotfiles..."
 
 mkdir -p "$CONFIG_DIR"
 
-for dir in hypr kitty waybar zsh; do
+for dir in "$SCRIPT_DIR"/*; do
+    [[ -d "$dir" ]] || continue
+
+    name="$(basename "$dir")"
+
     echo "[+] Installing $dir"
-    cp -r "$SCRIPT_DIR/$dir" "$CONFIG_DIR/"
+    cp -r "$dir" "$CONFIG_DIR/"
 done
 
 echo "[✓] Installation complete!"
