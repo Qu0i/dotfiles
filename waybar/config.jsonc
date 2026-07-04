@@ -4,15 +4,13 @@
     "height": 28,
     "spacing": 4,
     "margin-top": 6,
-    "margin-left": 12,
-    "margin-right": 12,
+    "margin-left": 3,
+    "margin-right": 4,
     "margin-bottom": 6,
 
     "modules-left": [
         "clock",
-        "mpris",
-        "network",
-        "custom/battery"
+        "mpris"
     ],
     "modules-center": [
         "hyprland/workspaces"
@@ -20,22 +18,21 @@
     "modules-right": [
         "cpu",
         "memory",
-        "custom/temperature",
-        "custom/fan",
+        "custom/reboot_network",
         "pulseaudio",
         "custom/daemons",
         "tray"
     ],
 
     "clock": {
-        "format": "  {:%H:%M}",
+        "format": "{:%H:%M}",
         "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
         "format-alt": " {:%A, %B %d, %Y}"
     },
     
     "mpris": {
-        "format": "{player_icon}  {dynamic}",
-        "format-paused": "{status_icon} <i>{dynamic}</i>",
+        "format": "{player_icon}  {title}",
+        "format-paused": "{status_icon} <i>{title}</i>",
         "player-icons": {
             "default": "▶",
             "spotify": ""
@@ -43,7 +40,17 @@
         "status-icons": {
             "paused": "⏸"
         },
-        "max-length": 18
+        "max-length": 60
+    },
+
+    "custom/reboot_network": {
+        "format": " ",
+        "tooltip": true,
+        "tooltip-format": "Перезагрузить Ethernet\nСтатус: {output}",
+        "on-click": "nmcli networking off && notify-send \"Reloading network.\" -t 500 -&& sleep 2 && nmcli networking on && notify-send \"Network reloaded.\" -t 500",
+        "interval": 10,
+        "exec": "nmcli -t -f GENERAL.STATE dev show enp42s0 | cut -d: -f2",
+        "exec-if": "which nmcli"
     },
 
     "network": {
@@ -77,7 +84,7 @@
     },
 
     "memory": {
-        "format": "  {percentage}%",
+        "format": "󰑊 {percentage}%",
         "interval": 2,
         "tooltip": true,
         "tooltip-format": "RAM: {used:0.1f}GiB / {total:0.1f}GiB ({percentage}%)\nSwap: {swapUsed:0.1f}GiB / {swapTotal:0.1f}GiB ({swapPercentage}%)"

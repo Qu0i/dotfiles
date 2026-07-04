@@ -2,18 +2,18 @@ export PATH="$HOME/.local/bin:$PATH"
 source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
 export HERMES_HOME="$HOME/.hermes"
 
-# === History ===
+# History
 HISTFILE=~/.zsh_history
 HISTSIZE=10000
 SAVEHIST=10000
 
-# не дублировать одинаковые команды
+# do not store duplicate commands
 setopt HIST_IGNORE_DUPS
-# сохранять историю сразу
+# append commands to history immediately
 setopt INC_APPEND_HISTORY
-# делить историю между сессиями
+# share history between sessions
 setopt SHARE_HISTORY
-# учитывать время выполнения
+# record command execution timestamps
 setopt EXTENDED_HISTORY
 
 venvexp() {
