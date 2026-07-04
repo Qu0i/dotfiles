@@ -21,7 +21,8 @@
         "custom/reboot_network",
         "pulseaudio",
         "custom/daemons",
-        "tray"
+        "tray",
+        "custom/power"
     ],
 
     "clock": {
@@ -46,11 +47,18 @@
     "custom/reboot_network": {
         "format": " ",
         "tooltip": true,
-        "tooltip-format": "Перезагрузить Ethernet\nСтатус: {output}",
+        "tooltip-format": "Reload network\nStatus: {output}",
         "on-click": "nmcli networking off && notify-send \"Reloading network.\" -t 500 -&& sleep 2 && nmcli networking on && notify-send \"Network reloaded.\" -t 500",
         "interval": 10,
         "exec": "nmcli -t -f GENERAL.STATE dev show enp42s0 | cut -d: -f2",
         "exec-if": "which nmcli"
+    },
+
+    "custom/power": {
+        "format": "⏻ ",
+        "tooltip": true,
+        "tooltip-format": "Menu",
+        "on-click": "~/.config/waybar/scripts/power_menu.sh"
     },
 
     "network": {

@@ -1,0 +1,121 @@
+* {
+    font-family: "JetBrainsMono Nerd Font", "Font Awesome 5 Free", monospace;
+    font-size: 13px;
+    font-weight: 500;
+}
+
+window {
+    background-color: rgba(26, 26, 26, 0.92);
+    border: 2px solid rgba(63, 192, 198, 0.5);
+    border-radius: 16px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.6);
+    padding: 12px;
+}
+
+#outer-box {
+    padding: 6px;
+}
+
+#input {
+    background-color: rgba(42, 42, 42, 0.8);
+    border: 1px solid rgba(63, 192, 198, 0.3);
+    border-radius: 12px;
+    color: #f0f0f0;
+    font-size: 14px;
+    padding: 10px 14px;
+    margin: 0 0 10px 0;
+    caret-color: #3FC0C6;
+}
+
+#input:focus {
+    border-color: rgba(63, 192, 198, 0.7);
+    box-shadow: 0 0 12px rgba(63, 192, 198, 0.15);
+}
+
+#input > image.left {
+    color: #3FC0C6;
+    margin-right: 8px;
+}
+
+#input > image.right {
+    color: #8a8a8a;
+    margin-left: 8px;
+}
+
+#inner-box {
+    background: transparent;
+    padding: 4px 0;
+}
+
+#entry {
+    background: transparent;
+    border-radius: 10px;
+    color: #b0b0b0;
+    padding: 8px 12px;
+    margin: 2px 0;
+}
+
+#entry:selected {
+    background: rgba(63, 192, 198, 0.15);
+    color: #f0f0f0;
+    border-left: 3px solid #3FC0C6;
+}
+
+#entry image {
+    margin-right: 10px;
+    color: #8a8a8a;
+    font-size: 18px;
+}
+
+#entry:selected image {
+    color: #3FC0C6;
+}
+
+#text {
+    color: #b0b0b0;
+}
+
+#text:selected {
+    color: #f0f0f0;
+}
+
+#scrollbar {
+    background: rgba(42, 42, 42, 0.5);
+    border-radius: 8px;
+    margin: 4px 0;
+    width: 4px;
+}
+
+#scrollbar slider {
+    background: rgba(63, 192, 198, 0.4);
+    border-radius: 8px;
+    min-height: 30px;
+}
+
+#scrollbar slider:hover {
+    background: rgba(63, 192, 198, 0.7);
+}
+
+#category {
+    color: #8a8a8a;
+    padding: 6px 10px;
+}
+
+#category:selected {
+    background: rgba(63, 192, 198, 0.15);
+    color: #3FC0C6;
+    border-radius: 8px;
+}
+
+#category image {
+    color: #8a8a8a;
+}
+
+#category:selected image {
+    color: #3FC0C6;
+}
+
+#prompt {
+    color: #3FC0C6;
+    font-weight: 600;
+}

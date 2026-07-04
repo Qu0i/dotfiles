@@ -1,0 +1,23 @@
+# Size and position
+width=960
+height=400
+location=center
+anchor=center
+lines=10
+
+# Colors
+color-enabled=true
+
+# Style
+allow_markup=true
+no_actions=true
+filter_rate_limit=5
+halign=fill
+orientation=vertical
+
+# Application mode with icons
+show=drun
+prompt=
+normal_window=true
+insensitive=true
+allow_images=true
