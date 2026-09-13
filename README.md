@@ -22,6 +22,9 @@ cd dotfiles
 ## Credits
 Parts of this configuration are based on, adapted from, or inspired by the work of other Linux users and open-source projects. Full credit is given where applicable.
 
+### Waybar
+- [AmalSKumar0](https://github.com/AmalSKumar0) — Waybar configuration used as the initial base; palette and several modules were substantially modified for this setup.
+
 ### Cava
 - [ray-pH](https://github.com/ray-pH) — original CAVA script used for the Waybar visualizer
 
