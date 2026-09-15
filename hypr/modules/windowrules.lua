@@ -5,8 +5,6 @@
 -- See https://wiki.hypr.land/Configuring/Basics/Window-Rules/
 -- and https://wiki.hypr.land/Configuring/Basics/Workspace-Rules/
 
--- Example window rules that are useful
-
 local suppressMaximizeRule = hl.window_rule({
 	-- Ignore maximize requests from all apps. You'll probably like this.
 	name = "suppress-maximize-events",
@@ -31,10 +29,15 @@ hl.window_rule({
 	no_focus = true,
 })
 
--- Layer rules also return a handle.
--- local overlayLayerRule = hl.layer_rule({
---     name  = "no-anim-overlay",
---     match = { namespace = "^my-overlay$" },
---     no_anim = true,
--- })
--- overlayLayerRule:set_enabled(false)
+hl.layer_rule({
+	name = "rofi-popup",
+	match = { namespace = "rofi" },
+	animation = "slide bottom",
+	dim_around = true,
+})
+
+hl.layer_rule({
+	name = "notifications-animation",
+	match = { namespace = "swaync-control-center" },
+	animation = "slide right",
+})
